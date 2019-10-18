@@ -1,0 +1,158 @@
+/* You can add global styles to this file, and also import other style files */
+/* Import the "Roboto" font */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+* {
+    /* The width and height properties includes content, padding and border */
+    box-sizing: border-box;
+    --main-bg-color: #52ff6f;
+    --second-bg-color: #65e47a;;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    background: #181818;
+    color: #fff;
+    overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+}
+
+#wrapper {
+    display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+}
+/* SIGNIN */
+#signin{
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        padding: 1rem;
+}
+
+#signin form {
+    width: 80%;
+    padding-bottom: 3rem;
+}
+
+#signin .logo{
+    margin-bottom: 8vh;
+}
+
+#signin .logo img {
+    width: 300px;
+}
+
+#signin label {
+    font-size: 0.9rem;
+    line-height: 2rem;
+    font-weight: 500;
+}
+
+#signin .text-input {
+    margin-bottom: 1.3rem;
+    width: 100%;
+    border-radius: 2px;
+    background: #181818;
+    border: 1px solid #555;
+    color: #ccc;
+    padding: 0.5rem 1rem; /* Top/Bottom Left/Right */
+    line-height: 1.3rem;
+}
+
+#signin .primary-btn{
+    width: 100%;
+}
+
+#signin .secondary-btn, .or, .links{
+    width: 60%;
+}
+
+/* FOOTER */
+#main-footer{
+    color: #ccc;
+    text-align: center;
+    font-size: 0.8rem;
+    max-width: 80%;
+    padding: 5rem;
+}
+
+#main-footer a {
+    color: var(--main-bg-color);
+    text-decoration: underline;
+}
+
+/* BUTTONS*/
+.primary-btn{
+    padding: 0.7rem 1rem;
+    height: 2.7rem;
+    display: block;
+    border: 0;
+    border-radius: 2px;
+    font-weight: 500;
+    background: var(--main-bg-color);
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+.primary-btn:hover{
+    background-color: var(--second-bg-color);
+}
+
+/*-------------------------------------------------------*/
+/* MEDIA QUERIES */
+/*-------------------------------------------------------*/
+
+/* Widescreens */
+@media(min-width: 1200px){
+    #left{
+        flex: 4;
+    }
+
+    #right{
+        flex: 6;
+    }
+}
+
+/* Mobile devices & Tablets */
+@media(max-width: 768px){
+    body{
+        overflow: auto;
+    }
+
+    #right{
+        display: none;
+    }
+
+    #left{
+        justify-content: start;
+        margin-top: 4vh;
+    }
+
+    #signin .logo{
+        margin-bottom: 2vh;
+    }
+
+    #signin .text-input{
+        margin-bottom: 0.7rem;
+    }
+
+    #signin .secondary-btn, .links > a {
+        font-size: 0.8rem;
+    }
+
+    #main-footer{
+        padding-top: 1rem;
+    }
+}
