@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Superhero } from 'src/app/models/superhero';
 import { HeroService } from 'src/app/services/hero.service';
 import { User } from 'src/app/models/user';
 
@@ -10,7 +9,6 @@ import { User } from 'src/app/models/user';
 })
 export class HeroFormComponent {
 
-  superHero: Superhero;
   submitted = false;
 
   model = new User();
