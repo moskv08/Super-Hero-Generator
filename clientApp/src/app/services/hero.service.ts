@@ -6,13 +6,18 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class HeroService {
-  superHero: Superhero;
+
+  superHero: string;
 
   constructor() { }
 
   getSuperHeroName(user: User) {
     // http call to backend
-    this.superHero = new Superhero('Black', 'Mamba');
-    return this.superHero;
+    // http.get(user.givenname, user. surname);
+
+    // const response = { name: 'Black Mamba' };
+    // this.superHero = JSON.parse(response.name);
+    // return this.superHero;
+    return 'Black Mamba';
   }
 }
