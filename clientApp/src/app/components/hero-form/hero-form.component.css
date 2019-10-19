@@ -1,0 +1,10 @@
+/* Track control state and validity with ngModel */
+
+/* The control's value is valid. */
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+}  
+/* The control's value is not valid. */
+.ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+}
