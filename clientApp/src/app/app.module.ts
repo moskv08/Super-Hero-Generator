@@ -2,18 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroService } from './services/hero.service';
-import { from } from 'rxjs';
+import { HeroFormComponent } from './components/hero-form/hero-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeroFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule
   ],
   providers: [HeroService],
