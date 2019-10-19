@@ -1,0 +1,43 @@
+<div class="container">
+  <div [hidden]="submitted">
+    <h1>Hero Form</h1>
+    <br>
+    <hr>
+    <form (ngSubmit)="getHeroName()" #heroForm="ngForm">
+      {{diagnostic}}
+      <div class="form-group">
+        <label for="givenname">Givenname</label>
+        <input type="text" class="form-control" id="givenname" [(ngModel)]="model.givenname" name="givenname" required
+          #givenname="ngModel">
+        <div [hidden]="givenname.valid || givenname.pristine" class="alert alert-danger">
+          Givenname is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="surname">Surname</label>
+        <input type="text" class="form-control" id="surname" [(ngModel)]="model.surname" name="surname" required
+          #surname="ngModel">
+        <div [hidden]="surname.valid || surname.pristine" class="alert alert-danger">
+          Surnname is required
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+
+    </form>
+  </div>
+
+  <div [hidden]="!submitted">
+    <h2>Your super hero name is:</h2>
+    <br>
+    <hr>
+    <div class="row">
+      <div class="col-xs-9">
+        <h1>{{ model.superHero }}</h1>
+      </div>
+    </div>
+    <br>
+    <button class="btn btn-primary" (click)="submitted=false; heroForm.reset()">Go back</button>
+  </div>
+</div>
