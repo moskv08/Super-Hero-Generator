@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { HeroService } from './services/hero.service';
-import { Superhero } from './models/superhero';
-import { User } from './models/user';
 
 @Component({
   selector: 'hero-root',
@@ -10,11 +7,7 @@ import { User } from './models/user';
 })
 export class AppComponent {
   title = 'Super Hero App';
-  superHero: Superhero;
+  description = 'Enter your name and get a super hero name assigned.';
 
-  constructor(private heroservice: HeroService) { }
-
-  getHeroName(user: User) {
-    this.superHero = this.heroservice.getSuperHeroName(user);
-  }
+  constructor() { }
 }
