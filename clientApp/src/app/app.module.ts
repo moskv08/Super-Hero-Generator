@@ -11,11 +11,11 @@ import { HeroFormComponent } from './components/hero-form/hero-form.component';
   declarations: [
     AppComponent,
     HeroFormComponent,
-    HttpClientModule,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [HeroService],
   bootstrap: [AppComponent]

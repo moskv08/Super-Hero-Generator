@@ -17,7 +17,11 @@ export class HeroFormComponent {
 
   getHeroName() {
     this.submitted = true;
-    this.model.superHero = this.heroservice.getSuperHeroName(this.model);
+    this.heroservice.getSuperHeroName(this.model)
+      .subscribe(response => this.model = {
+        // tslint:disable-next-line:no-string-literal
+        superHero: response['body'],
+      });
   }
 
   // TODO: Remove this when we're done
