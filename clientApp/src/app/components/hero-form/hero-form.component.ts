@@ -12,6 +12,7 @@ export class HeroFormComponent {
   submitted = false;
 
   model = new User();
+  public thug: any;
 
   constructor(private heroservice: HeroService) { }
 
@@ -19,11 +20,9 @@ export class HeroFormComponent {
     this.submitted = true;
     this.heroservice.getSuperHeroName(this.model)
       .subscribe(response => this.model = {
-        // tslint:disable-next-line:no-string-literal
-        superHero: response['body'],
+        superHero: response
       });
   }
-
   // TODO: Remove this when we're done
   get diagnostic() { return JSON.stringify(this.model); }
 
