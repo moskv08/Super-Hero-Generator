@@ -1,6 +1,6 @@
 /node_modules
 # Configuration
-/server/deployment/my.config
+/server/deployment/
 # Deployment files
 server/*.zip
 server/response.json
