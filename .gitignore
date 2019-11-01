@@ -3,3 +3,4 @@
 /server/deployment/my.config
 # Deployment files
 server/*.zip
+server/response.json
