@@ -1,2 +1,5 @@
 /node_modules
+# Configuration
 /server/deployment/my.config
+# Deployment files
+server/*.zip
