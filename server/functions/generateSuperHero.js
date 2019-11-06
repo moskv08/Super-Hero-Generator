@@ -1,6 +1,15 @@
-exports.handler = async (event) => {
-    // TODO implement
+exports.handler = function (event, context, callback) {
+    // Extract first letter
+    const firstLetter = event.color;
+    const lastLetter = event.power;
+    var result = GetSuperHero(firstLetter, lastLetter);
 
+    callback(null, result);
+
+};
+
+function GetSuperHero(firstLetter, lastLetter) {
+    // MyLambdaFunction logic here
     const superColor = [
         ['A', 'Black'],
         ['B', 'Green']
@@ -9,10 +18,6 @@ exports.handler = async (event) => {
         ['A', 'Giant'],
         ['B', 'Mamba']
     ];
-
-    // Extract first letter
-    const f = event.color;
-    const l = event.power;
 
     // Use the regular Map constructor to transform a 2D key-value Array into a map
     const myColorMap = new Map(superColor);
@@ -24,8 +29,8 @@ exports.handler = async (event) => {
         headers: {
             "Access-Control-Allow-Origin": "*"
         },
-        body: JSON.stringify(`${myColorMap.get(f)} ${myPowerMap.get(l)}`),
+        body: JSON.stringify(`${myColorMap.get(firstLetter)} ${myPowerMap.get(lastLetter)}`),
     };
 
     return response;
-};
+}
