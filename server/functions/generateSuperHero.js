@@ -1,11 +1,17 @@
 exports.handler = function (event, context, callback) {
-    // Extract first letter
-    const firstLetter = event.color;
-    const lastLetter = event.power;
-    var result = GetSuperHero(firstLetter, lastLetter);
+
+    if (event.color.length == 1 && event.power.length == 1) {
+        if (/^[A-Z]/.test(event.color) && /^[A-Z]/.test(event.power)) {
+            var result = GetSuperHero(event.color, event.power);
+        }
+        else {
+            result = "Please use single capital letters";
+        }
+    } else {
+        result = "Something went wrong.";
+    }
 
     callback(null, result);
-
 };
 
 function GetSuperHero(firstLetter, lastLetter) {
@@ -29,7 +35,9 @@ function GetSuperHero(firstLetter, lastLetter) {
         headers: {
             "Access-Control-Allow-Origin": "*"
         },
-        body: JSON.stringify(`${myColorMap.get(firstLetter)} ${myPowerMap.get(lastLetter)}`),
+        body: {
+            name: `${myColorMap.get(firstLetter)} ${myPowerMap.get(lastLetter)}`
+        },
     };
 
     return response;
