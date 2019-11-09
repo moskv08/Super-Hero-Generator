@@ -32,6 +32,16 @@ Everything related to the backend part can be found here:
 - Releases: Packaged and ready to deploy functions are stored here (not pushed).
 - Tests: Unit Test implemented with Mocha & Chai.
 
+### AWS Configuration
+
+Before you can deploy lambda functions to AWS you need to create a configuration file and configure the _AWS CLI_.
+
+```bash
+# File: ./deployment/my.config
+ARN="{your-ARN-string}"
+functionName="{your-function-name}"
+```
+
 ## How to use
 
 Check the live demo [here](#).
