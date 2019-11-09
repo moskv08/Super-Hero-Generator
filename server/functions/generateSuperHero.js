@@ -1,20 +1,15 @@
+
+
 exports.handler = function (event, context, callback) {
 
-    if (event.color.length == 1 && event.power.length == 1) {
-        if (/^[A-Z]/.test(event.color) && /^[A-Z]/.test(event.power)) {
-            var result = GetSuperHero(event.color, event.power);
-        }
-        else {
-            result = "Please use single capital letters";
-        }
-    } else {
-        result = "Something went wrong.";
-    }
-
+    var result = GetSuperHero(event.color, event.power);
     callback(null, result);
 };
 
 function GetSuperHero(firstLetter, lastLetter) {
+
+    let response = "Something went wrong.";
+
     // MyLambdaFunction logic here
     const superColor = [
         ['A', 'Black'],
@@ -25,20 +20,27 @@ function GetSuperHero(firstLetter, lastLetter) {
         ['B', 'Mamba']
     ];
 
-    // Use the regular Map constructor to transform a 2D key-value Array into a map
-    const myColorMap = new Map(superColor);
-    const myPowerMap = new Map(superPower);
+    if (firstLetter.length == 1 && lastLetter.length == 1) {
 
-    // return Super Hero Name
-    const response = {
-        statusCode: 200,
-        headers: {
-            "Access-Control-Allow-Origin": "*"
-        },
-        body: {
-            name: `${myColorMap.get(firstLetter)} ${myPowerMap.get(lastLetter)}`
-        },
-    };
+        if (/^[A-Z]/.test(firstLetter) && /^[A-Z]/.test(lastLetter)) {
+            // Use the regular Map constructor to transform a 2D key-value Array into a map
+            const myColorMap = new Map(superColor);
+            const myPowerMap = new Map(superPower);
 
+            // return Super Hero Name
+            response = {
+                statusCode: 200,
+                headers: {
+                    "Access-Control-Allow-Origin": "*"
+                },
+                body: {
+                    name: `${myColorMap.get(firstLetter)} ${myPowerMap.get(lastLetter)}`
+                },
+            };
+        }
+        else {
+            response = "Please use single capital letters";
+        }
+    }
     return response;
 }
