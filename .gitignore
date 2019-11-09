@@ -2,5 +2,6 @@
 # Configuration
 /server/deployment/*.config
 # Deployment files
-server/packages/
+server/releases/
 server/response.json
+server/node_modules
