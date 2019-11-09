@@ -11,4 +11,4 @@ aws lambda create-function \
 --runtime nodejs10.x \
 --role arn:$ARN \
 --handler $functionName.handler \
---zip-file fileb://./packages/$functionName.zip
+--zip-file fileb://./releases/$functionName.zip
