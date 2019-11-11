@@ -30,7 +30,7 @@ Everything related to the backend part can be found here:
 - Deployment: Contains all **bash scripts** to build and deploy Lambda functions via the **AWS CLI**.
 - Functions: Contains the actual business logic
 - Releases: Packaged and ready to deploy functions are stored here (not pushed).
-- Tests: Unit Test implemented with Mocha & Chai.
+- Tests: Unit Test implemented with Mocha & Chai and are following the "Should" Guide.
 
 ### AWS Configuration
 

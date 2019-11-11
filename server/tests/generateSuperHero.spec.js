@@ -32,6 +32,7 @@ describe('GenerateSuperHero', function () {
 
         it('should accept a status code, a header and a body.', function () {
             const result = SuperHero.GetHeroName('A', 'B');
+            // Assert
             result.should.have.property('statusCode');
             result.should.have.property('headers');
             result.should.have.property('body');
