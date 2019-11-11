@@ -1,24 +1,25 @@
-
+// MyLambdaFunction logic here
+const superColor = [
+    ['A', 'Black'],
+    ['B', 'Green']
+];
+const superPower = [
+    ['A', 'Giant'],
+    ['B', 'Mamba']
+];
 
 exports.handler = function (event, context, callback) {
 
-    var result = GetSuperHero(event.color, event.power);
+    const color = event.color;
+    const power = event.power;
+
+    const result = GetHeroName(color, power);
     callback(null, result);
 };
 
-function GetSuperHero(firstLetter, lastLetter) {
+exports.GetHeroName = function (firstLetter, lastLetter) {
 
     let response = "Something went wrong.";
-
-    // MyLambdaFunction logic here
-    const superColor = [
-        ['A', 'Black'],
-        ['B', 'Green']
-    ];
-    const superPower = [
-        ['A', 'Giant'],
-        ['B', 'Mamba']
-    ];
 
     if (firstLetter.length == 1 && lastLetter.length == 1) {
 
@@ -39,7 +40,7 @@ function GetSuperHero(firstLetter, lastLetter) {
             };
         }
         else {
-            response = "Please use single capital letters";
+            response = "Please use single capital letters.";
         }
     }
     return response;
