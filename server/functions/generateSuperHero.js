@@ -8,7 +8,7 @@ const superPower = [
     ['B', 'Mamba']
 ];
 
-exports.handler = function (event, context, callback) {
+function handler(event, context, callback) {
 
     const color = event.color;
     const power = event.power;
@@ -17,7 +17,7 @@ exports.handler = function (event, context, callback) {
     callback(null, result);
 };
 
-exports.GetHeroName = function (firstLetter, lastLetter) {
+function GetHeroName(firstLetter, lastLetter) {
 
     let response = "Something went wrong.";
 
@@ -45,3 +45,5 @@ exports.GetHeroName = function (firstLetter, lastLetter) {
     }
     return response;
 }
+
+module.exports = { GetHeroName, handler };
