@@ -10,16 +10,26 @@ const superPower = [
 
 function handler(event, context, callback) {
 
-    const color = event.color;
-    const power = event.power;
+    const color = event.queryStringParameters.color;
+    const power = event.queryStringParameters.power;
 
     const result = GetHeroName(color, power);
-    callback(null, result);
+
+    const response = {
+        "statusCode": 200,
+        "headers": {
+            "Access-Control-Allow-Origin": "*"
+        },
+        "body": JSON.stringify(result),
+        "isBase64Encoded": false
+    };
+
+    callback(null, response);
 };
 
 function GetHeroName(firstLetter, lastLetter) {
 
-    let response = "Something went wrong.";
+    let responseBody = "Something went wrong.";
 
     if (firstLetter.length == 1 && lastLetter.length == 1) {
 
@@ -29,21 +39,13 @@ function GetHeroName(firstLetter, lastLetter) {
             const myPowerMap = new Map(superPower);
 
             // return Super Hero Name
-            response = {
-                statusCode: 200,
-                headers: {
-                    "Access-Control-Allow-Origin": "*"
-                },
-                body: {
-                    name: `${myColorMap.get(firstLetter)} ${myPowerMap.get(lastLetter)}`
-                },
-            };
+            responseBody = `${myColorMap.get(firstLetter)} ${myPowerMap.get(lastLetter)}`
         }
         else {
-            response = "Please use single capital letters.";
+            responseBody = "Please use single capital letters.";
         }
     }
-    return response;
+    return responseBody;
 }
 
 module.exports = { GetHeroName, handler };
