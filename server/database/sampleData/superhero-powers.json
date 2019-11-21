@@ -1,0 +1,118 @@
+[
+    {
+        "key": "A",
+        "name": "Knight"
+    },
+    {
+        "key": "B",
+        "name": "Giant"
+    },
+    {
+        "key": "C",
+        "name": "Man"
+    },
+    {
+        "key": "D",
+        "name": "Slayer"
+    },
+    {
+        "key": "E",
+        "name": "Maniac"
+    },
+    {
+        "key": "F",
+        "name": "Ranger"
+    },
+    {
+        "key": "G",
+        "name": "Mask"
+    },
+    {
+        "key": "H",
+        "name": "Wizard"
+    },
+    {
+        "key": "I",
+        "name": "Ork"
+    },
+    {
+        "key": "J",
+        "name": "Dwarf"
+    },
+    {
+        "key": "K",
+        "name": "Mexican"
+    },
+    {
+        "key": "L",
+        "name": "Warrior"
+    },
+    {
+        "key": "M",
+        "name": "Giant"
+    },
+    {
+        "key": "N",
+        "name": "Shark"
+    },
+    {
+        "key": "O",
+        "name": "Skater"
+    },
+    {
+        "key": "P",
+        "name": "Walker"
+    },
+    {
+        "key": "Q",
+        "name": "German"
+    },
+    {
+        "key": "R",
+        "name": "Jumper"
+    },
+    {
+        "key": "S",
+        "name": "Witch"
+    },
+    {
+        "key": "T",
+        "name": "Robot"
+    },
+    {
+        "key": "U",
+        "name": "Tiger"
+    },
+    {
+        "key": "V",
+        "name": "Slicer"
+    },
+    {
+        "key": "W",
+        "name": "Woman"
+    },
+    {
+        "key": "X",
+        "name": "Girl"
+    },
+    {
+        "key": "Y",
+        "name": "Boy"
+    },
+    {
+        "key": "Z",
+        "name": "Monkey"
+    },
+    {
+        "key": "OE",
+        "name": "Ocean"
+    },
+    {
+        "key": "AE",
+        "name": "Chinese"
+    },
+    {
+        "key": "UE",
+        "name": "Moon"
+    }
+]
