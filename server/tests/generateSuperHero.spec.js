@@ -27,15 +27,6 @@ describe('GenerateSuperHero', function () {
             const result = SuperHero.GetHeroName('A', 'A');
             result.should.not.equal('Something went wrong.');
             result.should.not.equal('Please use single capital letters.');
-
-        });
-
-        it('should accept a status code, a header and a body.', function () {
-            const result = SuperHero.GetHeroName('A', 'B');
-            // Assert
-            result.should.have.property('statusCode');
-            result.should.have.property('headers');
-            result.should.have.property('body');
         });
     });
 });
