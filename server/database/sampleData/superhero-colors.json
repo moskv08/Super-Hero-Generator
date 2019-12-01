@@ -1,106 +1,106 @@
 [
     {
         "key": "A",
-        "name": "Knight"
+        "name": "Bad"
     },
     {
         "key": "B",
-        "name": "Giant"
+        "name": "Black"
     },
     {
         "key": "C",
-        "name": "Man"
+        "name": "Captain"
     },
     {
         "key": "D",
-        "name": "Slayer"
+        "name": "White"
     },
     {
         "key": "E",
-        "name": "Maniac"
+        "name": "Yellow"
     },
     {
         "key": "F",
-        "name": "Ranger"
+        "name": "Dark"
     },
     {
         "key": "G",
-        "name": "Mask"
+        "name": "Grey"
     },
     {
         "key": "H",
-        "name": "Wizard"
+        "name": "Small"
     },
     {
         "key": "I",
-        "name": "Ork"
+        "name": "Ill"
     },
     {
         "key": "J",
-        "name": "Dwarf"
+        "name": "Real"
     },
     {
         "key": "K",
-        "name": "Mexican"
+        "name": "Blue"
     },
     {
         "key": "L",
-        "name": "Warrior"
+        "name": "Long"
     },
     {
         "key": "M",
-        "name": "Giant"
+        "name": "Chrome"
     },
     {
         "key": "N",
-        "name": "Shark"
+        "name": "Turbo"
     },
     {
         "key": "O",
-        "name": "Skater"
+        "name": "Organic"
     },
     {
         "key": "P",
-        "name": "Walker"
+        "name": "Pure"
     },
     {
         "key": "Q",
-        "name": "German"
+        "name": "Majestic"
     },
     {
         "key": "R",
-        "name": "Jumper"
+        "name": "Green"
     },
     {
         "key": "S",
-        "name": "Witch"
+        "name": "Super"
     },
     {
         "key": "T",
-        "name": "Robot"
+        "name": "Metal"
     },
     {
         "key": "U",
-        "name": "Tiger"
+        "name": "Mr"
     },
     {
         "key": "V",
-        "name": "Slicer"
+        "name": "Plastic"
     },
     {
         "key": "W",
-        "name": "Woman"
+        "name": "Red"
     },
     {
         "key": "X",
-        "name": "Girl"
+        "name": "Ionic"
     },
     {
         "key": "Y",
-        "name": "Boy"
+        "name": "Atomic"
     },
     {
         "key": "Z",
-        "name": "Monkey"
+        "name": "Iron"
     }
 ]
