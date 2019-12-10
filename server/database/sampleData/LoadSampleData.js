@@ -20,8 +20,8 @@ for (let i = 0; i < tableName.length; i++) {
         var params = {
             TableName: `${tableName[i]}`,
             Item: {
-                "key": hero.key,
-                "name": hero.name,
+                "letter": hero.letter,
+                "supername": hero.supername,
             }
         };
 
