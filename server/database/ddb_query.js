@@ -6,18 +6,17 @@ AWS.config.update({
 });
 
 // Create the DynamoDB service object
-var ddb = new AWS.DynamoDB({ apiVersion: '2012-08-10' });
+var ddb = new AWS.DynamoDB.DocumentClient();
 
 var params = {
     TableName: 'SuperHeroColorCollation',
     Key: {
-        'key': { S: 'F' }
+        "letter": "F",
     },
-    ProjectionExpression: 'name'
 };
 
 // Call DynamoDB to read the item from the table
-ddb.getItem(params, function (err, data) {
+ddb.get(params, function (err, data) {
     if (err) {
         console.log("Error", err);
     } else {
