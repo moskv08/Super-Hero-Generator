@@ -13,11 +13,9 @@ for (let i = 0; i < tables.length; i++) {
         TableName: `${tables[i]}`,
         KeySchema: [
             { AttributeName: "letter", KeyType: "HASH" },  //Partition key
-            { AttributeName: "supername", KeyType: "RANGE" }  //Sort key
         ],
         AttributeDefinitions: [
             { AttributeName: "letter", AttributeType: "S" },
-            { AttributeName: "supername", AttributeType: "S" }
         ],
         ProvisionedThroughput: {
             ReadCapacityUnits: 5,
