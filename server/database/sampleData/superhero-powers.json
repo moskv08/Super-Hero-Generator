@@ -1,106 +1,106 @@
 [
     {
-        "key": "A",
-        "name": "Knight"
+        "letter": "A",
+        "supername": "Knight"
     },
     {
-        "key": "B",
-        "name": "Giant"
+        "letter": "B",
+        "supername": "Giant"
     },
     {
-        "key": "C",
-        "name": "Man"
+        "letter": "C",
+        "supername": "Man"
     },
     {
-        "key": "D",
-        "name": "Slayer"
+        "letter": "D",
+        "supername": "Slayer"
     },
     {
-        "key": "E",
-        "name": "Maniac"
+        "letter": "E",
+        "supername": "Maniac"
     },
     {
-        "key": "F",
-        "name": "Ranger"
+        "letter": "F",
+        "supername": "Ranger"
     },
     {
-        "key": "G",
-        "name": "Mask"
+        "letter": "G",
+        "supername": "Mask"
     },
     {
-        "key": "H",
-        "name": "Wizard"
+        "letter": "H",
+        "supername": "Wizard"
     },
     {
-        "key": "I",
-        "name": "Ork"
+        "letter": "I",
+        "supername": "Ork"
     },
     {
-        "key": "J",
-        "name": "Dwarf"
+        "letter": "J",
+        "supername": "Dwarf"
     },
     {
-        "key": "K",
-        "name": "Mexican"
+        "letter": "K",
+        "supername": "Mexican"
     },
     {
-        "key": "L",
-        "name": "Warrior"
+        "letter": "L",
+        "supername": "Warrior"
     },
     {
-        "key": "M",
-        "name": "Giant"
+        "letter": "M",
+        "supername": "Giant"
     },
     {
-        "key": "N",
-        "name": "Shark"
+        "letter": "N",
+        "supername": "Shark"
     },
     {
-        "key": "O",
-        "name": "Skater"
+        "letter": "O",
+        "supername": "Skater"
     },
     {
-        "key": "P",
-        "name": "Walker"
+        "letter": "P",
+        "supername": "Walker"
     },
     {
-        "key": "Q",
-        "name": "German"
+        "letter": "Q",
+        "supername": "German"
     },
     {
-        "key": "R",
-        "name": "Jumper"
+        "letter": "R",
+        "supername": "Jumper"
     },
     {
-        "key": "S",
-        "name": "Witch"
+        "letter": "S",
+        "supername": "Witch"
     },
     {
-        "key": "T",
-        "name": "Robot"
+        "letter": "T",
+        "supername": "Robot"
     },
     {
-        "key": "U",
-        "name": "Tiger"
+        "letter": "U",
+        "supername": "Tiger"
     },
     {
-        "key": "V",
-        "name": "Slicer"
+        "letter": "V",
+        "supername": "Slicer"
     },
     {
-        "key": "W",
-        "name": "Woman"
+        "letter": "W",
+        "supername": "Woman"
     },
     {
-        "key": "X",
-        "name": "Girl"
+        "letter": "X",
+        "supername": "Girl"
     },
     {
-        "key": "Y",
-        "name": "Boy"
+        "letter": "Y",
+        "supername": "Boy"
     },
     {
-        "key": "Z",
-        "name": "Monkey"
+        "letter": "Z",
+        "supername": "Monletter"
     }
 ]

@@ -1,106 +1,106 @@
 [
     {
-        "key": "A",
-        "name": "Bad"
+        "letter": "A",
+        "supername": "Bad"
     },
     {
-        "key": "B",
-        "name": "Black"
+        "letter": "B",
+        "supername": "Black"
     },
     {
-        "key": "C",
-        "name": "Captain"
+        "letter": "C",
+        "supersupername": "Captain"
     },
     {
-        "key": "D",
-        "name": "White"
+        "letter": "D",
+        "supername": "White"
     },
     {
-        "key": "E",
-        "name": "Yellow"
+        "letter": "E",
+        "supername": "Yellow"
     },
     {
-        "key": "F",
-        "name": "Dark"
+        "letter": "F",
+        "supername": "Dark"
     },
     {
-        "key": "G",
-        "name": "Grey"
+        "letter": "G",
+        "supername": "Grey"
     },
     {
-        "key": "H",
-        "name": "Small"
+        "letter": "H",
+        "supername": "Small"
     },
     {
-        "key": "I",
-        "name": "Ill"
+        "letter": "I",
+        "supername": "Ill"
     },
     {
-        "key": "J",
-        "name": "Real"
+        "letter": "J",
+        "supername": "Real"
     },
     {
-        "key": "K",
-        "name": "Blue"
+        "letter": "K",
+        "supername": "Blue"
     },
     {
-        "key": "L",
-        "name": "Long"
+        "letter": "L",
+        "supername": "Long"
     },
     {
-        "key": "M",
-        "name": "Chrome"
+        "letter": "M",
+        "supername": "Chrome"
     },
     {
-        "key": "N",
-        "name": "Turbo"
+        "letter": "N",
+        "supername": "Turbo"
     },
     {
-        "key": "O",
-        "name": "Organic"
+        "letter": "O",
+        "supername": "Organic"
     },
     {
-        "key": "P",
-        "name": "Pure"
+        "letter": "P",
+        "supername": "Pure"
     },
     {
-        "key": "Q",
-        "name": "Majestic"
+        "letter": "Q",
+        "supername": "Majestic"
     },
     {
-        "key": "R",
-        "name": "Green"
+        "letter": "R",
+        "supername": "Green"
     },
     {
-        "key": "S",
-        "name": "Super"
+        "letter": "S",
+        "supername": "Super"
     },
     {
-        "key": "T",
-        "name": "Metal"
+        "letter": "T",
+        "supername": "Metal"
     },
     {
-        "key": "U",
-        "name": "Mr"
+        "letter": "U",
+        "supername": "Mr"
     },
     {
-        "key": "V",
-        "name": "Plastic"
+        "letter": "V",
+        "supername": "Plastic"
     },
     {
-        "key": "W",
-        "name": "Red"
+        "letter": "W",
+        "supername": "Red"
     },
     {
-        "key": "X",
-        "name": "Ionic"
+        "letter": "X",
+        "supername": "Ionic"
     },
     {
-        "key": "Y",
-        "name": "Atomic"
+        "letter": "Y",
+        "supername": "Atomic"
     },
     {
-        "key": "Z",
-        "name": "Iron"
+        "letter": "Z",
+        "supername": "Iron"
     }
 ]
