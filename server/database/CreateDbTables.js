@@ -12,12 +12,12 @@ for (let i = 0; i < tables.length; i++) {
     const params = {
         TableName: `${tables[i]}`,
         KeySchema: [
-            { AttributeName: "key", KeyType: "HASH" },  //Partition key
-            { AttributeName: "name", KeyType: "RANGE" }  //Sort key
+            { AttributeName: "letter", KeyType: "HASH" },  //Partition key
+            { AttributeName: "supername", KeyType: "RANGE" }  //Sort key
         ],
         AttributeDefinitions: [
-            { AttributeName: "key", AttributeType: "S" },
-            { AttributeName: "name", AttributeType: "S" }
+            { AttributeName: "letter", AttributeType: "S" },
+            { AttributeName: "supername", AttributeType: "S" }
         ],
         ProvisionedThroughput: {
             ReadCapacityUnits: 5,
