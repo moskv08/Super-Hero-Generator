@@ -1,12 +1,9 @@
-// MyLambdaFunction logic here
-const superColor = [
-    ['A', 'Black'],
-    ['B', 'Green']
-];
-const superPower = [
-    ['A', 'Giant'],
-    ['B', 'Mamba']
-];
+// Load the AWS SDK for Node.js
+var AWS = require('aws-sdk');
+// Set the region
+AWS.config.update({
+    region: "eu-west-1",
+});
 
 function handler(event, context, callback) {
 
@@ -34,12 +31,13 @@ function GetHeroName(firstLetter, lastLetter) {
     if (firstLetter.length == 1 && lastLetter.length == 1) {
 
         if (/^[A-Z]/.test(firstLetter) && /^[A-Z]/.test(lastLetter)) {
+
             // Use the regular Map constructor to transform a 2D key-value Array into a map
-            const myColorMap = new Map(superColor);
-            const myPowerMap = new Map(superPower);
+            const myColor = LoadDataFromDb(firstLetter, 'SuperHeroColorCollation');
+            const myPower = LoadDataFromDb(lastLetter, 'SuperHeroPowerCollation');
 
             // return Super Hero Name
-            responseBody = `${myColorMap.get(firstLetter)} ${myPowerMap.get(lastLetter)}`
+            responseBody = `${myColor} ${myPower}`
         }
         else {
             responseBody = "Please use single capital letters.";
@@ -48,4 +46,25 @@ function GetHeroName(firstLetter, lastLetter) {
     return responseBody;
 }
 
-module.exports = { GetHeroName, handler };
+function LoadDataFromDb(letter, tableName) {
+    // Create the DynamoDB service object
+    const ddb = new AWS.DynamoDB.DocumentClient();
+
+    const params = {
+        TableName: tableName,
+        Key: {
+            "letter": letter,
+        },
+    };
+
+    // Call DynamoDB to read the item from the table
+    ddb.get(params, function (err, data) {
+        if (err) {
+            return err.message;
+        } else {
+            return data.Item.supername;
+        }
+    });
+}
+
+module.exports = { GetHeroName, LoadDataFromDb, handler };
