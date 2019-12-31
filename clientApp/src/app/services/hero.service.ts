@@ -8,6 +8,10 @@ import { Observable } from 'rxjs';
 })
 export class HeroService {
 
+  private color: string;
+  private power: string;
+  private url = 'https://q9oe54xzol.execute-api.eu-west-1.amazonaws.com/default/generateSuperHero?';
+
   constructor(private http: HttpClient) { }
 
   // Http Options
@@ -19,7 +23,10 @@ export class HeroService {
 
   getSuperHeroName(user: User): Observable<any> {
     // http call to backend
+    this.color = user.givenname[0].toUpperCase();
+    this.power = user.surname[0].toUpperCase();
+
     // return this.http.get('assets/testdata.json');
-    return this.http.get('https://7mo9pdmdbd.execute-api.eu-west-1.amazonaws.com/development/superhero');
+    return this.http.get(`${this.url}color=${this.color}&power=${this.power}`);
   }
 }
