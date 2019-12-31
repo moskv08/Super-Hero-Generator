@@ -9,23 +9,8 @@ async function handler(event) {
 
     const color = event.queryStringParameters.color;
     const power = event.queryStringParameters.power;
-    let result;
 
-    if (color.length && power.length == 1) {
-        if (/^[A-Z]/.test(color) && /^[A-Z]/.test(power)) {
-            const myColorPromise = LoadDataFromDb(color, 'SuperHeroColorCollation');
-            const myPowerPromise = LoadDataFromDb(power, 'SuperHeroPowerCollation');
-
-            const myColor = await myColorPromise;
-            const myPower = await myPowerPromise;
-
-            result = `${myColor} ${myPower}`;
-
-        }
-    } else {
-        result = "Something went wrong. More than one letter detected."
-    }
-
+    let result = await GetHeroName(color, power);
     return {
         "statusCode": 200,
         "headers": {
@@ -36,24 +21,23 @@ async function handler(event) {
     };
 };
 
-function GetHeroName(firstLetter, lastLetter) {
-
-    let responseBody = "Something went wrong.";
+async function GetHeroName(firstLetter, lastLetter) {
 
     if (/^[A-Z]/.test(firstLetter) && /^[A-Z]/.test(lastLetter)) {
 
-        // Use the regular Map constructor to transform a 2D key-value Array into a map
-        const myColor = LoadDataFromDb(firstLetter, 'SuperHeroColorCollation');
-        const myPower = LoadDataFromDb(lastLetter, 'SuperHeroPowerCollation');
+        try {
+            // Use the regular Map constructor to transform a 2D key-value Array into a map
+            let myColor = await LoadDataFromDb(firstLetter, 'SuperHeroColorCollation');
+            let myPower = await LoadDataFromDb(lastLetter, 'SuperHeroPowerCollation');
+            return `${myColor} ${myPower}`;
 
-        // return Super Hero Name
-        responseBody = `${myColor} ${myPower}`
+        } catch (error) {
+            return "Something went wrong: " + error.message;
+        }
     }
     else {
-        responseBody = "Please use single capital letters.";
+        return "Please use single capital letters.";
     }
-
-    return responseBody;
 }
 
 async function LoadDataFromDb(letter, tableName) {
@@ -70,7 +54,7 @@ async function LoadDataFromDb(letter, tableName) {
         let res = await ddb.get(params).promise();
         return res.Item.supername;
     } catch (err) {
-        console.log(err.message);
+        return err.message;
     }
 }
 
