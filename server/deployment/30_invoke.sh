@@ -4,8 +4,8 @@
 aws lambda invoke \
 --function-name $functionName \
 --payload '{ "queryStringParameters": {
-        "color": "A",
-        "power": "B"
+        "color": "F",
+        "power": "Z"
     } }' \
     response.json
 # print
