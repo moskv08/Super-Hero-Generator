@@ -24,49 +24,48 @@ AWS.config.update({
 //     }
 // });
 
-exports.handler = async function (event) {
-    let result = "Something went wrong.";
-    const color = 'M'
-    const power = 'Z'
+async function handler(event) {
 
-    let myColor;
-    let myPower;
+    const color = 'Z'
+    const power = 'F';
 
-    if (color.length && power.length == 1) {
-        if (/^[A-Z]/.test(color) && /^[A-Z]/.test(power)) {
-            LoadDataFromDb(color, 'SuperHeroColorCollation').then(result => {
-                console.log(result);
-            }).catch(err => {
-                myColor = 'ERROR: ' + err;
-            });
+    // const color = event.queryStringParameters.color;
+    // const power = event.queryStringParameters.power;
 
-            LoadDataFromDb(power, 'SuperHeroPowerCollation').then(result => {
-                console.log(result);
-            }).catch(err => {
-                myPower = 'ERROR: ' + err;
-            });
+    let result = await GetHeroName(color, power);
+    // return {
+    //     "statusCode": 200,
+    //     "headers": {
+    //         "Access-Control-Allow-Origin": "*"
+    //     },
+    //     "body": JSON.stringify(result),
+    //     "isBase64Encoded": false
+    // };
+    console.log(result);
+};
 
-            await 
+async function GetHeroName(firstLetter, lastLetter) {
 
+    if (/^[A-Z]/.test(firstLetter) && /^[A-Z]/.test(lastLetter)) {
+
+        try {
+            // Use the regular Map constructor to transform a 2D key-value Array into a map
+            let myColor = await LoadDataFromDb(firstLetter, 'SuperHeroColorCollation');
+            let myPower = await LoadDataFromDb(lastLetter, 'SuperHeroPowerCollation');
+            return `${myColor} ${myPower}`;
+
+        } catch (error) {
+            return "Something went wrong: " + error.message;
         }
-    } else {
-        result = "Something went wrong. More than one letter detected."
     }
-
-    return {
-        "statusCode": 200,
-        "headers": {
-            "Access-Control-Allow-Origin": "*"
-        },
-        "body": JSON.stringify(result),
-        "isBase64Encoded": false
-    };
+    else {
+        return "Please use single capital letters.";
+    }
 }
 
 async function LoadDataFromDb(letter, tableName) {
-    // Create the DynamoDB service object
-    const ddb = new AWS.DynamoDB.DocumentClient();
 
+    const ddb = new AWS.DynamoDB.DocumentClient();
     const params = {
         TableName: tableName,
         Key: {
@@ -78,6 +77,8 @@ async function LoadDataFromDb(letter, tableName) {
         let res = await ddb.get(params).promise();
         return res.Item.supername;
     } catch (err) {
-        console.log(err.message);
+        return err.message;
     }
 }
+
+module.exports = { GetHeroName, LoadDataFromDb, handler };
