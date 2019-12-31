@@ -5,3 +5,5 @@
 server/releases/
 server/response.json
 server/node_modules
+# Tests
+/server/database/ddb_query.js
