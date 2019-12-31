@@ -10,9 +10,7 @@ import { User } from 'src/app/models/user';
 export class HeroFormComponent {
 
   submitted = false;
-
   model = new User();
-  public thug: any;
 
   constructor(private heroservice: HeroService) { }
 
