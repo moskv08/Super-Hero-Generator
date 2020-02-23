@@ -1,17 +1,21 @@
 <template>
   <div class="container">
-     <Header/>
+    <Header />
+    <Search />
   </div>
 </template>
 
 <script>
-import Header from './components/Header';
+import Header from "./components/Header";
+import Search from "./components/Search";
+
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Header
+    Header,
+    Search
   }
-}
+};
 </script>
 
 <style>
@@ -28,7 +32,7 @@ export default {
 body {
   background: var(--primary-color);
   font-family: Arial, Helvetica, sans-serif;
-  color: #fff; 
+  color: #fff;
   line-height: 1.6;
 }
 
@@ -93,5 +97,4 @@ textarea {
     background: var(--primary-color);
   }
 }
-
 </style>
