@@ -2,7 +2,7 @@
   <section class="search">
     <h1>Get your Super Hero Name</h1>
     <!-- v.on handles events -->
-    <form v-om:submit.prevent="onSubmit">
+    <form v-on:submit.prevent="onSubmit">
       <div class="form-group">
         <label for="surname">Surname</label>
         <input type="text" id="surname" name="surname" v-model="surname" placeholder="John" />
@@ -20,15 +20,28 @@
 
 <script>
 export default {
-  name: 'Search',
+  name: "Search",
   data() {
     return {
-      surname: "", 
-      givenname: ""
+      surname: this.surname, 
+      givenname: this.givenname,
     }
   },
   beforeCreate(){
+    // Add background image default
     document.body.className = "body-bg-image";
+  },
+  methods: {
+    onSubmit() {
+      if (!this.surname || !this.givenname) {
+        this.$toasted.show("You must provide surname and givenname. Please try again.", {
+          duration: 3000,
+          icon: "exclamation-circle"
+        })
+      } else {
+        this.$router.push(`/superhero`);
+      }
+    },
   }
 };
 </script>
