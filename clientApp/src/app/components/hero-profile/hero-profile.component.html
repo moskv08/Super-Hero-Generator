@@ -1,0 +1,46 @@
+<template>
+  <section>
+    <div v-if="loading">
+      <h3>Loading..</h3>
+    </div>
+
+    <div v-if="error">
+      <h1>{{error}}</h1>
+      <router-link to="/">Go back</router-link>
+    </div>
+
+    <div v-if="profileData" class="container">
+      <h1 class="gamertag">
+        <!-- <img src="" alt="" class="platform-avatar"> -->
+        Iron Man
+      </h1>
+      <div class="grid">
+        <div class>
+          <img src alt />
+        </div>
+        <div class>
+          <ul>
+            <li>
+              <h4>Super Power</h4>
+              <p>Burn environment</p>
+            </li>
+            <li>
+              <h4>Origin</h4>
+              <p>
+                Californina,
+                <span>USA</span>
+              </p>
+            </li>
+            <li>
+              <h4>Classic Quote</h4>
+              <p>
+                <span>"Look at you, companiero"</span>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <router-link to="/">Go back</router-link>
+    </div>
+  </section>
+</template>
