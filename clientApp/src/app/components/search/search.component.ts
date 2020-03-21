@@ -1,18 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HeroService } from 'src/app/services/hero.service';
 import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'hero-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  styles: ['img { width: 200px; }']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
 
   constructor(private heroservice: HeroService) { }
-
-  ngOnInit() {
-  }
 
   submitted = false;
   model = new User();
