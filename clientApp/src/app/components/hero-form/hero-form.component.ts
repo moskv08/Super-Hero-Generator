@@ -21,7 +21,7 @@ export class HeroFormComponent {
         superHero: response
       });
   }
-  // TODO: Remove this when we're done
+  // TODO: Remove this when done testing
   get diagnostic() { return JSON.stringify(this.model); }
 
 }
