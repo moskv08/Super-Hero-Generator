@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { User } from '../models/user';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from './../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class HeroService {
 
   private color: string;
   private power: string;
-  private url = 'https://f037xrdix3.execute-api.eu-west-1.amazonaws.com/default/generateSuperHero?';
+  private url = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 
