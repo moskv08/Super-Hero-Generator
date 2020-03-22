@@ -1,18 +1,71 @@
-<section class="search">
+<header *ngIf="!model.superHero">
+  <img src="../assets/img/logo.png" alt="">
+</header> 
+
+<section *ngIf="!model.superHero" class="search">
   <h1>Get your Super Hero Name</h1>
-  <!-- v.on handles events -->
-  <form v-on:submit.prevent="onSubmit">
-    <div class="form-group">
-      <label for="surname">Surname</label>
-      <input type="text" id="surname" name="surname" v-model="surname" placeholder="John" />
-    </div>
+  <form (ngSubmit)="getHeroName()" #heroForm="ngForm">
+    
     <div class="form-group">
       <label for="givenname">Givenname</label>
-      <input type="text" id="givenname" name="surname" v-model="givenname" placeholder="Doe" />
+      <input type="text" class="form-control" id="givenname" [(ngModel)]="model.givenname" name="givenname" required
+        #givenname="ngModel" placeholder="John">
+      <div [hidden]="givenname.valid || givenname.pristine" class="alert alert-danger">
+        Givenname is required
+      </div>
     </div>
+
     <div class="form-group">
-      <!-- <input type="submit" value="Get Super Hero Name" class="btn"> -->
+      <label for="surname">Surname</label>
+      <input type="text" id="surname" [(ngModel)]="model.surname" name="surname" required
+        #surname="ngModel" placeholder="Doe" >
+      <div [hidden]="surname.valid || surname.pristine" class="alert alert-danger">
+        Surname is required
+      </div>
+    </div>
+
+    <div class="form-group">
       <input type="submit" value="Get Super Hero Name" class="btn" [disabled]="!heroForm.form.valid">
     </div>
   </form>
+</section>
+
+<section>
+  <div *ngIf="loading">
+    <h3>Loading..</h3>
+  </div>
+
+  <div *ngIf="error">
+    <h1>{{error}}</h1>
+    <!-- <router-link to="/">Go back</router-link> -->
+  </div>
+
+  <div *ngIf="model.superHero" class="container">
+    <h1 class="gamertag">
+      <!-- <img src="" alt="" class="platform-avatar"> -->
+      {{ model.superHero }} 
+    </h1>
+    <div class="grid">
+      <!-- <div class>
+        <img src alt />
+      </div> -->
+      <div class>
+        <ul>
+          <li>
+            <h4>Super Power</h4>
+            <p>Knock out enemies with an iron fist</p>
+          </li>
+          <li>
+            <h4>Origin</h4>
+            <p>
+              California,
+              <span>USA</span>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <button class="btn" (click)="model.superHero=''; heroForm.reset()">Go back</button>
+  </div>
 </section>
