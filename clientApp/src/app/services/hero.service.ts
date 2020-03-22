@@ -10,7 +10,7 @@ export class HeroService {
 
   private color: string;
   private power: string;
-  private url = 'https://q9oe54xzol.execute-api.eu-west-1.amazonaws.com/default/generateSuperHero?';
+  private url = 'https://f037xrdix3.execute-api.eu-west-1.amazonaws.com/default/generateSuperHero?';
 
   constructor(private http: HttpClient) { }
 
