@@ -11,8 +11,6 @@ import { SearchComponent } from './components/search/search.component';
 
 const appRoutes: Routes = [
   { path: '', component: SearchComponent },
-  { path: 'profile', component: ProfileComponent },
-
 ];
 
 @NgModule({
