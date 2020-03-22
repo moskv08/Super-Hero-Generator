@@ -35,7 +35,7 @@ img {
 }
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-gap: 1rem;
 }
 li {
@@ -54,7 +54,7 @@ li span {
   font-size: 1rem;
   color: #ccc;
 }
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   h1 {
     font-size: 1.5rem;
     display: block;
