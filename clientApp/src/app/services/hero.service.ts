@@ -12,6 +12,7 @@ export class HeroService {
   private color: string;
   private power: string;
   private url = environment.apiUrl;
+  private key = environment.apiKey;
 
   constructor(private http: HttpClient) { }
 
@@ -19,15 +20,18 @@ export class HeroService {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
+      'x-api-key': this.key,
     })
-  };
+  };  
 
   getSuperHeroName(user: User): Observable<any> {
     // http call to backend
     this.color = user.givenname[0].toUpperCase();
     this.power = user.surname[0].toUpperCase();
 
+    this.url = this.url + `color=${this.color}&power=${this.power}`;
+
     // return this.http.get('assets/testdata.json');
-    return this.http.get(`${this.url}color=${this.color}&power=${this.power}`);
+    return this.http.get(`${this.url}`, { headers: this.httpOptions.headers});
   }
 }
