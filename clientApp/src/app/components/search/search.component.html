@@ -36,7 +36,7 @@
   </div>
 
   <div *ngIf="error">
-    <h1>{{error}}</h1>
+    <h1>{{error.message}}</h1>
     <!-- <router-link to="/">Go back</router-link> -->
   </div>
 
@@ -66,6 +66,6 @@
       </div>
     </div>
 
-    <button class="btn" (click)="model.superHero=''; heroForm.reset()">Go back</button>
+    <button class="btn" (click)="model.superHero='';">Go back</button>
   </div>
 </section>
