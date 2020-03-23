@@ -1,6 +1,7 @@
 
 :root {
-  --primary-color: #953036;
+  /* --primary-color: #953036; */
+  --primary-color: rgb(35, 35, 39);
 }
 
 * {
