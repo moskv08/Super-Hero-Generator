@@ -29,11 +29,12 @@ export class SearchComponent implements OnInit{
         response => this.model = { superHero: response },
         error => this.error = error
         );
+
     this.loading = false;
 
   }
 
   // TODO: Remove this when done testing
-  get diagnostic() { return JSON.stringify(this.model); }
+  // get diagnostic() { return JSON.stringify(this.model); }
 
 }
