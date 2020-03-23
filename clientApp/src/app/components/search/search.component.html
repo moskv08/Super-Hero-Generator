@@ -43,6 +43,7 @@
   <div *ngIf="model.superHero" class="container">
     <h1 class="gamertag">
       <!-- <img src="" alt="" class="platform-avatar"> -->
+      
       {{ model.superHero }} 
     </h1>
     <div class="grid">
@@ -66,6 +67,6 @@
       </div>
     </div>
 
-    <button class="btn" (click)="model.superHero='';">Go back</button>
+    <button class="btn" (click)="model.superHero=''; error=''">Go back</button>
   </div>
 </section>
