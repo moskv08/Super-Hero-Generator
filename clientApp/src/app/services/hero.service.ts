@@ -26,12 +26,17 @@ export class HeroService {
 
   getSuperHeroName(user: User): Observable<any> {
     // http call to backend
-    this.color = user.givenname[0].toUpperCase();
-    this.power = user.surname[0].toUpperCase();
+    try {    
+      this.color = user.givenname[0].toUpperCase();
+      this.power = user.surname[0].toUpperCase();
+  
+      this.url = this.url + `color=${this.color}&power=${this.power}`;
+  
+      return this.http.get(`${this.url}`, { headers: this.httpOptions.headers});
+      
+    } catch (error) {
+      return error;
+    }
 
-    this.url = this.url + `color=${this.color}&power=${this.power}`;
-
-    // return this.http.get('assets/testdata.json');
-    return this.http.get(`${this.url}`, { headers: this.httpOptions.headers});
   }
 }
