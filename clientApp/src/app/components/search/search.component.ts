@@ -7,7 +7,7 @@ import { User } from 'src/app/models/user';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent implements OnInit{
+export class SearchComponent implements OnInit {
 
   constructor(private heroservice: HeroService) { }
 
