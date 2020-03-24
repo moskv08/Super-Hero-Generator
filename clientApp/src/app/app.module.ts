@@ -6,7 +6,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeroService } from './services/hero.service';
-import { ProfileComponent } from './components/profile/profile.component';
 import { SearchComponent } from './components/search/search.component';
 
 const appRoutes: Routes = [
@@ -16,13 +15,12 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileComponent,
     SearchComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule, 
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
