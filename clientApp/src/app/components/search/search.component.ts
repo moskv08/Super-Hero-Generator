@@ -6,7 +6,6 @@ import { User } from 'src/app/models/user';
   selector: 'hero-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
-  // styles: ['img { width: 200px; }']
 })
 export class SearchComponent implements OnInit{
 

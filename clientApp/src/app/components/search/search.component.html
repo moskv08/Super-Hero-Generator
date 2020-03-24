@@ -1,8 +1,8 @@
-<header *ngIf="!model.superHero">
-  <img src="../assets/img/logo.png" alt="">
+<header>
+  <img src="../assets/img/pngkit.png" alt="">
 </header> 
 
-<section *ngIf="!model.superHero" class="search">
+<section *ngIf="!model.superHero && !loading" class="search">
   <h1>Get your Super Hero Name</h1>
   <form (ngSubmit)="getHeroName()" #heroForm="ngForm">
     
@@ -29,11 +29,11 @@
     </div>
   </form>
 </section>
+<section *ngIf="loading">
+    <h3>Loading..</h3>
+</section>
 
 <section>
-  <div *ngIf="loading">
-    <h3>Loading..</h3>
-  </div>
 
   <div *ngIf="error">
     <h1>{{error.message}}</h1>
