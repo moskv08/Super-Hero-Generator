@@ -5,24 +5,30 @@
 This **Super Hero Generator Application** creates Super Hero names based on your firstname and lastname.
 The functionality of this application isn't special at all. But the focus here is more on architecture and security. 
 
-![Overview](./overview.jpeg)
+![Overview](./superherodemo.gif)
 
 ## Serverless Microservice Architecture
 
-The **Angular Frontend** is running in the Azure cloud as a single page application using a service consuming a REST API. The backend part is running as a serverless lambda function in the AWS cloud providing a GET REST endpoint to request a super hero name. 
+The **Angular Frontend** is running in the Azure cloud as a single page application using a service consuming a REST API. The backend part is running as a serverless lambda function in the AWS cloud providing a GET REST endpoint (API Gateway) to request a super hero name.  
+  
 The **Lambda Backend** receives information about firstname and secondname within parameters passed by a **AWS API Gateway** acting as a proxy gateway. After processing some verification the lambda function does a database call -  using the AWS SDK - to the AWS native NoSQL database **DynamoDB** to return a composed **Super Hero Name**.
 
-### Security
-
-The Angular frontend will be protected with **OpenID Connect** and **OAuth 2.0**.
-
-## Project setup
+## Frontend setup
 
 The frontend application is organised in a classical Angular folder structure.
 
 ```
 ./clientApp
 ```
+### Configuration
+
+Before you can consume the REST API you need a valid **ApiUrl** & **ApiKey** stored in the Angular environment folder:
+
+```bash
+./environments/**
+```
+## Backend setup
+
 Everything related to the backend part can be found here:
 
 ```
@@ -44,6 +50,12 @@ ARN="{your-ARN-string}"
 functionName="{your-function-name}"
 ```
 
+Before you can consume the REST API you need a valid **ApiUrl** & **ApiKey** stored in the Angular environment folder:
+
+```bash
+./environments/**
+```
+
 ### Build and Deploy
 
 To build and deploy a lambda function, own developed scripts are in place to build, deploy and invoke lambda function.
@@ -54,4 +66,4 @@ To build and deploy a lambda function, own developed scripts are in place to bui
 
 ## How to use
 
-Check the live demo [here](#).
+Check the live demo [here](https://superhero-generator.azurewebsites.net).
