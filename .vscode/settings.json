@@ -1,0 +1,5 @@
+{
+  "appService.showBuildDuringDeployPrompt": false,
+  "appService.defaultWebAppToDeploy": "/subscriptions/123aa1b6-96f9-41ba-9e5f-ed8b20527145/resourceGroups/rg-frontend-apps-prod/providers/Microsoft.Web/sites/superherogeneratorapp",
+  "appService.deploySubpath": "clientApp/dist/clientApp"
+}
